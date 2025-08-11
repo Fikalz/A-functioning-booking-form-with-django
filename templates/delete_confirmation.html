@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>delete contact</title>
+</head>
+<body>
+    <h1>delete contact</h1>
+    <p>are you sure you want to delete <strong>{{booking.name}}</strong></p>
+    <form action="" method="post">
+        {% csrf_token%}
+        <button type="submit">yes,delete</button>
+        <a href="{% url 'showdb' %}"><button>
+            cancel
+        </button></a>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input{
+        padding: 1em;
+    }
+    input:focus{
+        outline: 0;
+        border: dashed blue 2px;
+        border-radius: 3px;
+    }
+    .form-group{
+        margin-bottom:1em;
+    }
+    .main_bt button{
+        padding: 1em 2em;
+        background-color: skyblue;
+        color: white;
+        border-radius: 5px;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 0.8rem;
+        border: none;
+        cursor: pointer;
+    }
+</style>
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+        <h1>edit this information</h1>
+        <div class="form-group">
+            <input type="text" class="email-bt"
+            placeholder="Name" name="name" id="name"
+            value="{{updateInfo.name}}"/>
+        </div>
+        <div class="form-group">
+            <input type="text" class="email-bt"
+            placeholder="Email" name="email" id="email"
+            value="{{updateInfo.email}}"/>
+        </div>
+        <div class="form-group">
+            <input type="date" class="email-bt"
+            placeholder="date" name="date" id="date"
+            value="{{updateInfo.date}}"/>
+        </div>
+        <div class="form-group">
+            <input type="time" class="email-bt"
+            placeholder="time" name="time" id="time"
+            value="{{updateInfo.time}}"/>
+        </div>
+          <div class="form-group">
+            <select class="num_of_person" name="person" style="height: 49px;" value="{{updateInfo.person}}">
+                 <option selected>Person</option>
+                 <option value="1">Person 1</option>
+                 <option value="2">Person 2</option>
+                 <option value="3">Person 3</option>
+                 <option value="4">Person 4</option>
+            </select>
+        </div>
+         
+        <div class="main_bt">
+            <button type="submit">submit</button>
+        </div>
+    </form>
+</body>
+</html>
